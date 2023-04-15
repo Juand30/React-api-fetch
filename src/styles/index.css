@@ -1,12 +1,81 @@
+body {
+    background: #f9f9f9;
+}
+input::placeholder {
+    text-align: center;
+  }
 
-/* 
+input {
+    width: 230px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  .main-container {
+    width: 100%;
+    height: calc(100vh - 100px);
+    color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.form-container{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.tasks-container{
+    display: block;
+    width: 25%;
+    background-color: #f9f2e0;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.contador{
+    border-top: 1px solid #d0d0d0;
+    width: 15rem;
+    margin: 0; 
+    display: flex;
+    margin-top: 0.8rem;
+    padding: 3px;
+    color: #5d5d5d;
+    
+}
+.divtask{
+    border-top: 1px solid #d0d0d0;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    text-align-last: justify;
+}
+.letters{
+    font-family: 'Montserrat', sans-serif;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+.boton-oculto {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    float: right;
+  }
+  
+  .contenedor-botones:hover .boton-oculto {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+  
