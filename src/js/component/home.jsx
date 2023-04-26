@@ -35,21 +35,38 @@ const Home = () => {
   }
 
   useEffect(()=>{
-    fetch('https://assets.breatheco.de/apis/fake/todos/user/juand', {
-      method: "GET",
-      headers: {
-      }
-    })
+    
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/juand') // Funcion GET predeterminada
     .then(resp => {
-        return resp.json(); 
+      return resp.json();
     })
-    .then(data => {
-        console.log(data); 
+    .then(data =>{
+      console.log(`Success:`, data);
     })
     .catch(error => {
-        console.log(error);
-    });
-}, []);
+	    console.log("Hay un error");
+	    });
+
+  },[])
+
+  // useEffect(() => {
+  //   const options = {
+  //     method: 'PUT', 
+  //     body: JSON.stringify(data), 
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   };
+  
+  //   fetch('https://assets.breatheco.de/apis/fake/todos/user/juand', options)
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(response => console.log('Success:', response))
+  //     .catch(error => console.error(error));
+  // }, []);
+
+  // video de clase 18 min 51:13
 
   function handleChange(e) {
     setTarea(e.target.value);
