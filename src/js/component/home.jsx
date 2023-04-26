@@ -34,27 +34,23 @@ const Home = () => {
     console.log(listadoTareas);
   }
 
-  useEffect(() => {
-    fetch("http://assets.breatheco.de/apis/fake/todos/user/juand", {
+  useEffect(()=>{
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/juand', {
       method: "GET",
-      body: JSON.stringify(todos),
       headers: {
-        "Content-Type": "application/json",
-      },
+      }
     })
-      .then((resp) => {
-        return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
-        console.log(resp);
-      })
-      .then((data) => {
-        //Aquí es donde debe comenzar tu código después de que finalice la búsqueda
-        console.log(data); //esto imprimirá en la consola el objeto exacto recibido del servidor
-      })
-      .catch((error) => {
-        //manejo de errores
+    .then(resp => {
+        return resp.json(); 
+    })
+    .then(data => {
+        console.log(data); 
+    })
+    .catch(error => {
         console.log(error);
-      });
-  }, []);
+    });
+}, []);
+
   function handleChange(e) {
     setTarea(e.target.value);
     console.log("tarea");
