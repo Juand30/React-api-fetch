@@ -62,7 +62,7 @@ input {
     width: 15rem;
     display: flex;
     flex-direction: column;
-    text-align-last: justify;
+    
 }
 .letters{
     font-family: 'Montserrat', sans-serif;
