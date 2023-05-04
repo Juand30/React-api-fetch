@@ -1,5 +1,5 @@
 body {
-    background: #f9f9f9;
+    background: #f9f9f9 !important;
 }
 input::placeholder {
     text-align: center;
@@ -65,17 +65,21 @@ input {
     
 }
 .letters{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
 
 .boton-oculto {
     opacity: 0;
     transition: opacity 0.2s ease;
     float: right;
+    padding: initial;
   }
   
   .contenedor-botones:hover .boton-oculto {
     opacity: 1;
     transition: opacity 0.2s ease;
   }
-  
+
+  .list{
+    width: 70%;
+  }
