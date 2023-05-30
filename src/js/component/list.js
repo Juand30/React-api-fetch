@@ -20,29 +20,32 @@ const List = () => {
     const newList = listOfTask.filter((oneTask, i) => i != index)
     setListOfTask (newList)
    }
+
+   const getAll = ()=>{
+    return  fetch('https://assets.breatheco.de/apis/fake/todos/user/juand')
+    .then((response) => {
+        console.log(response.ok); // Será true (verdad) si la respuesta es exitosa.
+        console.log(response.status); // el código de estado = 200 o código = 400 etc.
+        //console.log(resp.text()); // Intentará devolver el resultado exacto como cadena (string)
+        return response.json()
+    }).then((response) => {
+        console.log(response)
+        setListOfTask(response)
+    })
+    .catch(error => {
+        console.log(error);
+    })
+   }
    
     useEffect (() => {
-
-        fetch('https://assets.breatheco.de/apis/fake/todos/user/juand')
-        .then((response) => {
-            console.log(response.ok); // Será true (verdad) si la respuesta es exitosa.
-            console.log(response.status); // el código de estado = 200 o código = 400 etc.
-            //console.log(resp.text()); // Intentará devolver el resultado exacto como cadena (string)
-            return response.json()
-        }).then((response) => {
-            console.log(response)
-            setListOfTask(response)
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        getAll();
     }, [])
 
 
-    useEffect (() => {
-        console.log (listOfTask)
-        fetchAdd()
-    }, [listOfTask])
+    // useEffect (() => {
+    //     console.log (listOfTask)
+    //     fetchAdd()
+    // }, [listOfTask])
   
         const fetchAdd = () => {
 
@@ -55,7 +58,9 @@ const List = () => {
               })
             .then((response) => response.json())
             .then((response) => {
+                setListOfTask(response)
                 console.log(response)
+                getAll();
             })
         }
         return (
