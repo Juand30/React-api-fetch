@@ -1,5 +1,5 @@
 import React from "react";
-import List from "./list";
+import ApiList from "./apiList";
 
 //create your first component
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
 		<div className="main-container">
         <h1 className="letters">Api-Todo-List</h1>
 			<div className="tasks-container">
-				<List />	
+				<ApiList />	
 			</div>		
 		</div>
 	);
